@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\stefa\\source\\c\\Algo20230320",
+            "binaryPath": "c:\\Users\\stefa\\source\\c\\Algo20230320\\main.exe",
+            "binaryArgs": []
+        }
+    ]
+}
