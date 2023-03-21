@@ -31,11 +31,31 @@ int genYear(){
     CAR *find  = NULL;
     for(int i = 0; i < data->antal;i++)
     {
-        if(!strcmp(regno,data->cars[i].regno))
+        if(!strcmp(regno,data->cars[i].regno)){
             find = &data->cars[i];
+            return find;
+        }
     }
     return find;
  } 
+
+ CAR *Find2(CAR_DATA *data, char *regno ){
+    for(int i = 0; i < data->antal;i++)
+    {
+        int compare = strcmp(regno,data->cars[i].regno);
+        if(compare == 0) return &data->cars[i];
+        if(compare<0) return NULL;
+    }
+    return NULL;
+ } 
+
+
+ int compare(const void *s1, const void *s2)
+{
+  CAR *e1 = (CAR *)s1;
+  CAR *e2 = (CAR *)s2;
+  return strcmp(e1->regno, e2->regno);
+}
 
 
 int main(){
@@ -51,19 +71,27 @@ int main(){
         allCars.cars[i].year = genYear();
     }
 
+    qsort(allCars.cars,allCars.antal,sizeof(CAR),compare);
+
     clock_t start, end;
     double cpu_time_used;
     start = clock();
-    CAR *f = Find(&allCars,regno);
+    CAR *f = Find2(&allCars,allCars.cars[1000].regno);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;    
     printf("took %f seconds to execute \n", cpu_time_used);
-
     if(f){
         printf("Found");
-    }else{
-        printf("Not found");
     }
+    start = clock();
+    f = Find2(&allCars,allCars.cars[89999999].regno);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;    
+    printf("took %f seconds to execute \n", cpu_time_used);
+    if(f){
+        printf("Found");
+    }
+
 
     
     return 0;
