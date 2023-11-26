@@ -9,6 +9,11 @@
             "cwd": "c:\\Users\\stefa\\source\\calgo20230320\\Algo20230320",
             "binaryPath": "c:\\Users\\stefa\\source\\calgo20230320\\Algo20230320\\main.exe",
             "binaryArgs": []
+        },
+        {
+            "cwd": "c:\\Users\\stefa\\source\\c\\algo\\Algo20230320",
+            "binaryPath": "c:\\Users\\stefa\\source\\c\\algo\\Algo20230320\\main.exe",
+            "binaryArgs": []
         }
     ]
 }
