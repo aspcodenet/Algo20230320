@@ -36,7 +36,6 @@ int genYear(void){
     return rand()%(2023-1990) + 1990;
 }
 
-// cppcheck-suppress unusedFunction
  CAR *Find(CAR_DATA *data, char *regno ){
     CAR *find  = NULL;
     for(int i = 0; i < data->antal;i++)
