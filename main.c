@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-
+//Hello
 void genRegNo(char *buffer);
 
 typedef struct {
@@ -95,6 +95,7 @@ char getch(){
 
 
 void gotoxy(int x,int y){
+//What
     printf("%c[%d;%df",0x1B,y,x);
 }
 
@@ -193,7 +194,7 @@ void startMenu(){
         scanf("%d",&n);
         switch(n){
             case 1:
-                printf("Game starting");
+                printf("Game starting2");
                 runGame();
                 break;
             case 2:
